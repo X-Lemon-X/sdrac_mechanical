@@ -1,0 +1,31 @@
+N - Number of rollers
+Rr - Radius of the roller
+R - Radius of the rollers PCD - Pitch Circle Diameter
+E - Eccentricity - offset from input shaft to a cycloidal disk
+
+x = (R*cos(t))-(Rr*cos(t+arctan(sin((1-N)*t)/((R/(E*N))-cos((1-N)*t)))))-(E*cos(N*t))
+y = (-R*sin(t))+(Rr*sin(t+arctan(sin((1-N)*t)/((R/(E*N))-cos((1-N)*t)))))+(E*sin(N*t))
+
+#Przekłądnia główna dóża
+
+N=16
+Rr=3 mamy lub 4 
+R=84/2 = 42
+E=1
+
+x=(42*cos(t))-(3*cos(t+atan(sin((1-16)*t)/((42/(16))-cos((1-16)*t)))))-(1*cos(16*t))
+y=(-42*sin(t))+(3*sin(t+atan(sin((1-15)*t)/((42/(16))-cos((1-16)*t)))))+(1*sin(16*t))
+
+#Przekłądnia główna Mała
+
+N=15
+Rr=3
+R=50/2 = 25
+E=1
+
+x = (25*cos(t))-(3*cos(t+atan(sin((1-15)*t)/((22/(1*15))-cos((1-15)*t)))))-(1*cos(15*t))
+y = (-22*sin(t))+(3*sin(t+atan(sin((1-15)*t)/((22/(1*15))-cos((1-15)*t)))))+(1*sin(15*t))
+
+1 mm * ( 25 ul * cos(1 rad * t) ) - 1 mm * ( 3 ul * cos(1 rad * t + atan(sin(1 rad * ( 1 ul - 15 ul ) * t) / ( ( 25 ul / ( 1 ul * 15 ul ) ) - cos(1 rad * ( 1 ul - 15 ul ) * t) ))) ) - 1 mm * ( 1 ul * cos(1 rad * 15 ul * t) )
+
+1 mm * ( -25 ul * sin(1 rad * t) ) + 1 mm * ( 3 ul * sin(1 rad * t + atan(sin(1 rad * ( 1 ul - 15 ul ) * t) / ( ( 25 ul / ( 1 ul * 15 ul ) ) - cos(1 rad * ( 1 ul - 15 ul ) * t) ))) ) + 1 mm * ( 1 ul * sin(1 rad * 15 ul * t) )
