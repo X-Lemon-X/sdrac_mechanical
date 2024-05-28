@@ -1,6 +1,6 @@
 # Model desings and parts for SDRAC project
 
-![SDRAC Project](images\Robot_asembly.png)
+![SDRAC Project](images/Robot_asembly.png)
 
 ## Models
 All the models are designed in Fusion 360. The files are saved in the Fusion 360 format (.f3d) and also exported to .step.
