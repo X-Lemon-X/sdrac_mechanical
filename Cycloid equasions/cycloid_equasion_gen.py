@@ -20,8 +20,8 @@ def get_Y_equasion(R,Rr,N,E):
 
 def main():
   parser = argparse.ArgumentParser(description='Cycloid Equation Generator')
-  parser.add_argument('-R', type=float, help='Radius of the rollers PCD')
-  parser.add_argument('-Rr', type=float, help='Radius of the roller')
+  parser.add_argument('-R', type=float, help='Radius of the  outer rollers PCD')
+  parser.add_argument('-Rr', type=float, help='Radius of the single roller')
   parser.add_argument('-N', type=int, help='Number of rollers  Ration of the gearbox is N-1')
   parser.add_argument('-E', type=float, help='Eccentricity - offset from input shaft to a cycloidal disk')
   args = parser.parse_args()
