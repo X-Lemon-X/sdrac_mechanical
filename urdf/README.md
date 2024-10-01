@@ -1,4 +1,4 @@
-## Exporting Fusion 360 design to URDF for ROS2 
+## Exporting Fusion 360 design to URDF for ROS2 or rather ROS2 Package
 If someone is looking for how to export projects from Fusion 360 to URDF, here are the links:
 - Original repository (however, it is not maintained and does not work unless you have an older version of Fusion 360): [link](https://github.com/dheena2k2/fusion2urdf-ros2)
 - Fork with a merge request that works with the latest Fusion 360 (2.0.20256): [link](https://github.com/Gautham-Ramkumar03/fusion2urdf-ros2/tree/master)
@@ -6,7 +6,7 @@ If someone is looking for how to export projects from Fusion 360 to URDF, here a
 ## How to install the plugin
 folow the instructions in the original repository to install the plugin. [installing the plugin](https://github.com/dheena2k2/fusion2urdf-ros2?tab=readme-ov-file#installation)
 
-# URDF export procedure
+## URDF export procedure
 1. Export the project from fusion for which you want to generate urdf files to "step" file In order to do make it easy do delete and move components around withou fusion 360 overhead.
 2. Inport the .step file to fusion 360 as new design.
 3. Make new component for each rigid set of objects you want to move as one part.
