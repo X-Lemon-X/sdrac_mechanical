@@ -169,7 +169,7 @@
   <origin xyz="0.028 0.25 0.0" rpy="0 0 0"/>
   <parent link="axis3_1"/>
   <child link="axis4_1"/>
-  <axis xyz="0.0 -1.0 0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="Rev3" type="continuous">
@@ -183,7 +183,7 @@
   <origin xyz="-0.032 0.0 0.068" rpy="0 0 0"/>
   <parent link="axis1_1"/>
   <child link="axis2_1"/>
-  <axis xyz="-1.0 0.0 0.0"/>
+  <axis xyz="1.0 0.0 0.0"/>
 </joint>
 
 <joint name="Rev1" type="continuous">
