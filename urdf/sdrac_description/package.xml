@@ -4,8 +4,8 @@
 <name>sdrac_description</name>
   <version>0.0.0</version>
 <description>The sdrac_description package</description>
-  <maintainer email="todo@todo.com">author</maintainer>
-  <license>TODO: License declaration</license>
+  <maintainer email="dudzinski.patryk02@gmail.com">author</maintainer>
+  <license>MIT</license>
 
   <depend>xacro</depend>
   <depend>rviz2</depend>

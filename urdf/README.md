@@ -18,3 +18,5 @@ folow the instructions in the original repository to install the plugin. [instal
 8. if some errors occur, try to fix them manually. or look on repo for some solutions.
 9. Congratulation you have your urdf files created.
 
+# Rvis2 tips
+- if rvis screen is flickering export QT_SCREEN_SCALE_FACTORS=1 in terminal before running rvis2.
