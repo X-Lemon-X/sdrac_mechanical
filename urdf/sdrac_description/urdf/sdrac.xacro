@@ -155,7 +155,7 @@
   <origin xyz="-0.035222 0.0284 0.0" rpy="0 0 0"/>
   <parent link="axis5_1"/>
   <child link="axis6_1"/>
-  <axis xyz="0.0 -1.0 0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="Rev5" type="continuous">
