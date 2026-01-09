@@ -1,196 +1,208 @@
 <?xml version="1.0" ?>
-<robot name="sdrac" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="sdrac"
+  xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<xacro:include filename="$(find sdrac_description)/urdf/materials.xacro" />
-<xacro:include filename="$(find sdrac_description)/urdf/sdrac.trans" />
-<xacro:include filename="$(find sdrac_description)/urdf/sdrac.gazebo" />
-<link name="base_link">
-  <inertial>
-    <origin xyz="0.0007676297507278628 -0.0401979471190537 -0.07247627153798698" rpy="0 0 0"/>
-    <mass value="7.266183830201463"/>
-    <inertia ixx="0.042911" iyy="0.025602" izz="0.040767" ixy="1.9e-05" iyz="0.002898" ixz="3.4e-05"/>
-  </inertial>
-  <visual>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="file://$(find sdrac_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="file://$(find sdrac_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <xacro:macro name="sdrac" params="parent">
 
-<link name="axis6_1">
-  <inertial>
-    <origin xyz="-3.2764962736714365e-07 0.007225961258404967 4.800782223424171e-07" rpy="0 0 0"/>
-    <mass value="0.10979080097486817"/>
-    <inertia ixx="1.7e-05" iyy="3.1e-05" izz="1.7e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
-  </inertial>
-  <visual>
-    <origin xyz="-0.012473 -0.406993 -0.442572" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="file://$(find sdrac_description)/meshes/axis6_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin xyz="-0.012473 -0.406993 -0.442572" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="file://$(find sdrac_description)/meshes/axis6_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+    <xacro:include filename="$(find sdrac_description)/urdf/materials.xacro" />
+    <xacro:include filename="$(find sdrac_description)/urdf/sdrac.trans" />
+    <xacro:include filename="$(find sdrac_description)/urdf/sdrac.gazebo" />
 
-<link name="axis5_1">
-  <inertial>
-    <origin xyz="-0.03528372301420105 0.007984462855355978 -2.301358929873709e-05" rpy="0 0 0"/>
-    <mass value="0.6457180123589406"/>
-    <inertia ixx="0.000274" iyy="0.00046" izz="0.000525" ixy="-0.0" iyz="0.0" ixz="0.0"/>
-  </inertial>
-  <visual>
-    <origin xyz="-0.047695 -0.378593 -0.442572" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="file://$(find sdrac_description)/meshes/axis5_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin xyz="-0.047695 -0.378593 -0.442572" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="file://$(find sdrac_description)/meshes/axis5_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+    <link name="base_link_phony">
+      <inertial>
+        <origin xyz="0.0007676297507278628 -0.0401979471190537 -0.07247627153798698" rpy="0 0 0"/>
+        <mass value="7.266183830201463"/>
+        <inertia ixx="0.042911" iyy="0.025602" izz="0.040767" ixy="1.9e-05" iyz="0.002898" ixz="3.4e-05"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find sdrac_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="silver"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find sdrac_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
 
-<link name="axis4_1">
-  <inertial>
-    <origin xyz="-0.0029650358586139486 0.08099752059061327 0.0005687278418848862" rpy="0 0 0"/>
-    <mass value="1.4547009998705278"/>
-    <inertia ixx="0.003373" iyy="0.003899" izz="0.006431" ixy="0.000284" iyz="1e-05" ixz="-7e-06"/>
-  </inertial>
-  <visual>
-    <origin xyz="-0.012523 -0.253593 -0.442483" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="file://$(find sdrac_description)/meshes/axis4_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin xyz="-0.012523 -0.253593 -0.442483" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="file://$(find sdrac_description)/meshes/axis4_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+    <link name="axis6_1">
+      <inertial>
+        <origin xyz="-3.2764962736714365e-07 0.007225961258404967 4.800782223424171e-07" rpy="0 0 0"/>
+        <mass value="0.10979080097486817"/>
+        <inertia ixx="1.7e-05" iyy="3.1e-05" izz="1.7e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="-0.012473 -0.406993 -0.442572" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find sdrac_description)/meshes/axis6_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="silver"/>
+      </visual>
+      <collision>
+        <origin xyz="-0.012473 -0.406993 -0.442572" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find sdrac_description)/meshes/axis6_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
 
-<link name="axis3_1">
-  <inertial>
-    <origin xyz="0.03672804039185374 0.0285707721138165 6.804105387614445e-05" rpy="0 0 0"/>
-    <mass value="6.81811167715887"/>
-    <inertia ixx="0.095496" iyy="0.012182" izz="0.090479" ixy="0.00499" iyz="8e-06" ixz="1.2e-05"/>
-  </inertial>
-  <visual>
-    <origin xyz="0.015477 -0.003593 -0.442483" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="file://$(find sdrac_description)/meshes/axis3_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin xyz="0.015477 -0.003593 -0.442483" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="file://$(find sdrac_description)/meshes/axis3_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+    <link name="axis5_1">
+      <inertial>
+        <origin xyz="-0.03528372301420105 0.007984462855355978 -2.301358929873709e-05" rpy="0 0 0"/>
+        <mass value="0.6457180123589406"/>
+        <inertia ixx="0.000274" iyy="0.00046" izz="0.000525" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="-0.047695 -0.378593 -0.442572" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find sdrac_description)/meshes/axis5_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="silver"/>
+      </visual>
+      <collision>
+        <origin xyz="-0.047695 -0.378593 -0.442572" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find sdrac_description)/meshes/axis5_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
 
-<link name="axis2_1">
-  <inertial>
-    <origin xyz="-0.014859534190087398 0.001937092553890222 0.2124106500084152" rpy="0 0 0"/>
-    <mass value="5.242525173026436"/>
-    <inertia ixx="0.123514" iyy="0.123984" izz="0.007347" ixy="8.7e-05" iyz="-0.001162" ixz="0.002305"/>
-  </inertial>
-  <visual>
-    <origin xyz="0.031477 -0.0 -0.0675" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="file://$(find sdrac_description)/meshes/axis2_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin xyz="0.031477 -0.0 -0.0675" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="file://$(find sdrac_description)/meshes/axis2_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+    <link name="axis4_1">
+      <inertial>
+        <origin xyz="-0.0029650358586139486 0.08099752059061327 0.0005687278418848862" rpy="0 0 0"/>
+        <mass value="1.4547009998705278"/>
+        <inertia ixx="0.003373" iyy="0.003899" izz="0.006431" ixy="0.000284" iyz="1e-05" ixz="-7e-06"/>
+      </inertial>
+      <visual>
+        <origin xyz="-0.012523 -0.253593 -0.442483" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find sdrac_description)/meshes/axis4_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="silver"/>
+      </visual>
+      <collision>
+        <origin xyz="-0.012523 -0.253593 -0.442483" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find sdrac_description)/meshes/axis4_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
 
-<link name="axis1_1">
-  <inertial>
-    <origin xyz="0.03695342780989438 -0.02790466291042681 0.06526325347192152" rpy="0 0 0"/>
-    <mass value="3.7267506867826663"/>
-    <inertia ixx="0.010468" iyy="0.012637" izz="0.01758" ixy="0.005587" iyz="0.000281" ixz="-0.00038"/>
-  </inertial>
-  <visual>
-    <origin xyz="-0.000523 0.0 0.0005" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="file://$(find sdrac_description)/meshes/axis1_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin xyz="-0.000523 0.0 0.0005" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="file://$(find sdrac_description)/meshes/axis1_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+    <link name="axis3_1">
+      <inertial>
+        <origin xyz="0.03672804039185374 0.0285707721138165 6.804105387614445e-05" rpy="0 0 0"/>
+        <mass value="6.81811167715887"/>
+        <inertia ixx="0.095496" iyy="0.012182" izz="0.090479" ixy="0.00499" iyz="8e-06" ixz="1.2e-05"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.015477 -0.003593 -0.442483" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find sdrac_description)/meshes/axis3_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="silver"/>
+      </visual>
+      <collision>
+        <origin xyz="0.015477 -0.003593 -0.442483" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find sdrac_description)/meshes/axis3_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
 
-<joint name="Rev6" type="continuous">
-  <origin xyz="-0.035222 0.0284 0.0" rpy="0 0 0"/>
-  <parent link="axis5_1"/>
-  <child link="axis6_1"/>
-  <axis xyz="0.0 1.0 0.0"/>
-</joint>
+    <link name="axis2_1">
+      <inertial>
+        <origin xyz="-0.014859534190087398 0.001937092553890222 0.2124106500084152" rpy="0 0 0"/>
+        <mass value="5.242525173026436"/>
+        <inertia ixx="0.123514" iyy="0.123984" izz="0.007347" ixy="8.7e-05" iyz="-0.001162" ixz="0.002305"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.031477 -0.0 -0.0675" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find sdrac_description)/meshes/axis2_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="silver"/>
+      </visual>
+      <collision>
+        <origin xyz="0.031477 -0.0 -0.0675" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find sdrac_description)/meshes/axis2_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
 
-<joint name="Rev5" type="continuous">
-  <origin xyz="0.035172 0.125 8.9e-05" rpy="0 0 0"/>
-  <parent link="axis4_1"/>
-  <child link="axis5_1"/>
-  <axis xyz="1.0 0.0 -0.0"/>
-</joint>
+    <link name="axis1_1">
+      <inertial>
+        <origin xyz="0.03695342780989438 -0.02790466291042681 0.06526325347192152" rpy="0 0 0"/>
+        <mass value="3.7267506867826663"/>
+        <inertia ixx="0.010468" iyy="0.012637" izz="0.01758" ixy="0.005587" iyz="0.000281" ixz="-0.00038"/>
+      </inertial>
+      <visual>
+        <origin xyz="-0.000523 0.0 0.0005" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find sdrac_description)/meshes/axis1_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="silver"/>
+      </visual>
+      <collision>
+        <origin xyz="-0.000523 0.0 0.0005" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find sdrac_description)/meshes/axis1_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
 
-<joint name="Rev4" type="continuous">
-  <origin xyz="0.028 0.25 0.0" rpy="0 0 0"/>
-  <parent link="axis3_1"/>
-  <child link="axis4_1"/>
-  <axis xyz="0.0 1.0 0.0"/>
-</joint>
+    <joint name="Rev6" type="continuous">
+      <origin xyz="-0.035222 0.0284 0.0" rpy="0 0 0"/>
+      <parent link="axis5_1"/>
+      <child link="axis6_1"/>
+      <axis xyz="0.0 1.0 0.0"/>
+    </joint>
 
-<joint name="Rev3" type="continuous">
-  <origin xyz="0.016 0.003593 0.374983" rpy="0 0 0"/>
-  <parent link="axis2_1"/>
-  <child link="axis3_1"/>
-  <axis xyz="1.0 0.0 0.0"/>
-</joint>
+    <joint name="Rev5" type="continuous">
+      <origin xyz="0.035172 0.125 8.9e-05" rpy="0 0 0"/>
+      <parent link="axis4_1"/>
+      <child link="axis5_1"/>
+      <axis xyz="1.0 0.0 -0.0"/>
+    </joint>
 
-<joint name="Rev2" type="continuous">
-  <origin xyz="-0.032 0.0 0.068" rpy="0 0 0"/>
-  <parent link="axis1_1"/>
-  <child link="axis2_1"/>
-  <axis xyz="1.0 0.0 0.0"/>
-</joint>
+    <joint name="Rev4" type="continuous">
+      <origin xyz="0.028 0.25 0.0" rpy="0 0 0"/>
+      <parent link="axis3_1"/>
+      <child link="axis4_1"/>
+      <axis xyz="0.0 1.0 0.0"/>
+    </joint>
 
-<joint name="Rev1" type="continuous">
-  <origin xyz="0.000523 0.0 -0.0005" rpy="0 0 0"/>
-  <parent link="base_link"/>
-  <child link="axis1_1"/>
-  <axis xyz="0.0 -0.0 -1.0"/>
-</joint>
+    <joint name="Rev3" type="continuous">
+      <origin xyz="0.016 0.003593 0.374983" rpy="0 0 0"/>
+      <parent link="axis2_1"/>
+      <child link="axis3_1"/>
+      <axis xyz="1.0 0.0 0.0"/>
+    </joint>
+
+    <joint name="Rev2" type="continuous">
+      <origin xyz="-0.032 0.0 0.068" rpy="0 0 0"/>
+      <parent link="axis1_1"/>
+      <child link="axis2_1"/>
+      <axis xyz="1.0 0.0 0.0"/>
+    </joint>
+
+    <joint name="Rev1" type="continuous">
+      <origin xyz="0.000523 0.0 -0.0005" rpy="0 0 0"/>
+      <parent link="base_link_phony"/>
+      <child link="axis1_1"/>
+      <axis xyz="0.0 -0.0 -1.0"/>
+    </joint>
+
+    <joint name="base_link_phony_joint" type="fixed">
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <parent link="${parent}"/>
+      <child link="base_link_phony" />
+    </joint>
+
+  </xacro:macro>
 
 </robot>
